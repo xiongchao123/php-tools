@@ -1,5 +1,7 @@
 <?php
 
+namespace Tool\Support;
+
 class Str
 {
     public static function angleConvert($str, $convert = 0)

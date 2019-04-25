@@ -1,0 +1,28 @@
+{
+  "name": "xiongchao/php-tool",
+  "description": "php tool library in PHP",
+  "keywords": [
+    "php",
+    "tool",
+    "php-tool",
+    "string",
+    "word length",
+    "snowflake"
+  ],
+  "type": "library",
+  "license": "Apache",
+  "authors": [
+    {
+      "name": "xiongchao",
+      "email": "805833031@qq.com"
+    }
+  ],
+  "require": {
+    "league/container": "3.2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tool\\": "src/"
+    }
+  }
+}
