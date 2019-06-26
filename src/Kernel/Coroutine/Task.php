@@ -3,7 +3,7 @@
 namespace Tool\Kernel\Coroutine;
 
 /**
- * TaskÈÎÎñÀà
+ * Taskä»»åŠ¡ç±»
  */
 class Task
 {
@@ -24,7 +24,7 @@ class Task
     }
 
     /**
-     * »ñÈ¡µ±Ç°µÄTaskµÄID
+     * èŽ·å–å½“å‰çš„Taskçš„ID
      *
      * @return mixed
      */
@@ -34,7 +34,7 @@ class Task
     }
 
     /**
-     * ÅÐ¶ÏTaskÖ´ÐÐÍê±ÏÁËÃ»ÓÐ
+     * åˆ¤æ–­Taskæ‰§è¡Œå®Œæ¯•äº†æ²¡æœ‰
      *
      * @return bool
      */
@@ -44,7 +44,7 @@ class Task
     }
 
     /**
-     * ÉèÖÃÏÂ´ÎÒª´«¸øÐ­³ÌµÄÖµ£¬±ÈÈç $id = (yield $xxxx)£¬Õâ¸öÖµ¾Í¸øÁË$idÁË
+     * è®¾ç½®ä¸‹æ¬¡è¦ä¼ ç»™åç¨‹çš„å€¼ï¼Œæ¯”å¦‚ $id = (yield $xxxx)ï¼Œè¿™ä¸ªå€¼å°±ç»™äº†$idäº†
      *
      * @param $value
      */
@@ -54,18 +54,18 @@ class Task
     }
 
     /**
-     * ÔËÐÐÈÎÎñ
+     * è¿è¡Œä»»åŠ¡
      *
      * @return mixed
      */
     public function run()
     {
-        // ÕâÀïÒª×¢Òâ£¬Éú³ÉÆ÷µÄ¿ªÊ¼»áreset£¬ËùÒÔµÚÒ»¸öÖµÒªÓÃcurrent»ñÈ¡
+        // è¿™é‡Œè¦æ³¨æ„ï¼Œç”Ÿæˆå™¨çš„å¼€å§‹ä¼šresetï¼Œæ‰€ä»¥ç¬¬ä¸€ä¸ªå€¼è¦ç”¨currentèŽ·å–
         if ($this->beforeFirstYield) {
             $this->beforeFirstYield = false;
             return $this->coroutine->current();
         } else {
-            // ÎÒÃÇËµ¹ýÁË£¬ÓÃsendÈ¥µ÷ÓÃÒ»¸öÉú³ÉÆ÷
+            // æˆ‘ä»¬è¯´è¿‡äº†ï¼Œç”¨sendåŽ»è°ƒç”¨ä¸€ä¸ªç”Ÿæˆå™¨
             $retval = $this->coroutine->send($this->sendValue);
             $this->sendValue = null;
             return $retval;

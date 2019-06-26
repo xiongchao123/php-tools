@@ -46,4 +46,13 @@ class Str
 
         return count(array_filter(explode(" ", $str)));
     }
+
+    public static function isContainChinese($str)
+    {
+        return preg_match('/[\x7f-\xff]/', $str) == 1;
+    }
+
+    public static function isCompletelyChinese($str){
+        return preg_match('/^[\x7f-\xff]+$/', $str) == 1;
+    }
 }

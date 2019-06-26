@@ -3,17 +3,17 @@
 require "../autoload.php";
 
 /*
- *  ÇëÊéÐ´Ò»¸ö¼òµ¥Ëã·¨£¬¼ÆËãÒ»¸öÊý×ÖÇø¼äÖ®¼äµÄÖÊÊýºÍ£¬¼ÙÉèÊý×ÖÇø¼äÎª[1,10000]¡£
-    ½ø½×Ò»£ºÇø¼äÔö´óÎª[1,1000Íò]
-    ½ø½×¶þ£ºÇø¼äÔö´óÎª[1,100ÍòÒÚ]
+ *  è¯·ä¹¦å†™ä¸€ä¸ªç®€å•ç®—æ³•ï¼Œè®¡ç®—ä¸€ä¸ªæ•°å­—åŒºé—´ä¹‹é—´çš„è´¨æ•°å’Œï¼Œå‡è®¾æ•°å­—åŒºé—´ä¸º[1,10000]ã€‚
+    è¿›é˜¶ä¸€ï¼šåŒºé—´å¢žå¤§ä¸º[1,1000ä¸‡]
+    è¿›é˜¶äºŒï¼šåŒºé—´å¢žå¤§ä¸º[1,100ä¸‡äº¿]
  */
 
 /*
- *  ÏÈÒª°ÑÎÊÌâ²ð½â¿ª£º
-    µÚÒ»¸öÎÊÌâ£¬ÔõÃ´¼ÆËãÒ»¸öÊý×ÖÊÇÖÊÊý£»
-    µÚ¶þ¸öÎÊÌâ£¬ÔõÃ´ÀûÓÃÏÈÇ°µÄ¼ÆËã½á¹ûÀ´ÌáÉý¼ÆËãËÙ¶È£»
-    µÚÈý¸öÎÊÌâ£¬ÔõÃ´×î´ó»¯ÀûÓÃµ¥»úÐÔÄÜ½øÐÐ¼Æ»®£»
-    µÚËÄ¸öÎÊÌâ£¬ÔõÃ´×éÖ¯·Ö²¼Ê½¼¯Èº½øÐÐ¼ÆËã
+ *  å…ˆè¦æŠŠé—®é¢˜æ‹†è§£å¼€ï¼š
+    ç¬¬ä¸€ä¸ªé—®é¢˜ï¼Œæ€Žä¹ˆè®¡ç®—ä¸€ä¸ªæ•°å­—æ˜¯è´¨æ•°ï¼›
+    ç¬¬äºŒä¸ªé—®é¢˜ï¼Œæ€Žä¹ˆåˆ©ç”¨å…ˆå‰çš„è®¡ç®—ç»“æžœæ¥æå‡è®¡ç®—é€Ÿåº¦ï¼›
+    ç¬¬ä¸‰ä¸ªé—®é¢˜ï¼Œæ€Žä¹ˆæœ€å¤§åŒ–åˆ©ç”¨å•æœºæ€§èƒ½è¿›è¡Œè®¡åˆ’ï¼›
+    ç¬¬å››ä¸ªé—®é¢˜ï¼Œæ€Žä¹ˆç»„ç»‡åˆ†å¸ƒå¼é›†ç¾¤è¿›è¡Œè®¡ç®—
  */
 
 function isPrimeNumber($number)
@@ -24,7 +24,7 @@ function isPrimeNumber($number)
 
     $mod_six = $number % 6;
 
-    // ²»ÔÚ6µÄ±¶ÊýÁ½²àµÄÒ»¶¨²»ÊÇÖÊÊý
+    // ä¸åœ¨6çš„å€æ•°ä¸¤ä¾§çš„ä¸€å®šä¸æ˜¯è´¨æ•°
     if ($mod_six != 1 && $mod_six != 5) {
         return false;
     }
@@ -69,8 +69,8 @@ $endNumber = 1000 * 10000;
 if ($endNumber < $startCoroutineNumber) {
     getPrimeSum($beginNumber, $endNumber);
 } else {
-    // Ð­³ÌÖ´ÐÐ
-    $scheduler = new \Tool\Kernel\Coroutine\Scheduler(); // ÊµÀý»¯Ò»¸öµ÷¶ÈÆ÷
+    // åç¨‹æ‰§è¡Œ
+    $scheduler = new \Tool\Kernel\Coroutine\Scheduler(); // å®žä¾‹åŒ–ä¸€ä¸ªè°ƒåº¦å™¨
     $n = ceil($endNumber / $startCoroutineNumber);
 
     for ($i = 0; $i < $n; $i++) {
@@ -81,7 +81,7 @@ if ($endNumber < $startCoroutineNumber) {
             $endNum = $endNumber;
         }
 
-        $scheduler->addTask(getPrimeSumTask($beginNum, $endNum)); // Ìí¼Ó²»Í¬µÄ±Õ°üº¯Êý×÷ÎªÈÎÎñ
+        $scheduler->addTask(getPrimeSumTask($beginNum, $endNum)); // æ·»åŠ ä¸åŒçš„é—­åŒ…å‡½æ•°ä½œä¸ºä»»åŠ¡
     }
 
     $scheduler->run();

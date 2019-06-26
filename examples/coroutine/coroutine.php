@@ -5,18 +5,18 @@ require "../autoload.php";
 function task1() {
     for ($i = 1; $i <= 10; ++$i) {
         echo "This is task 1 iteration $i.\n";
-        yield; // Ö÷¶¯ÈÃ³öCPUµÄÖ´ÐÐÈ¨
+        yield; // ä¸»åŠ¨è®©å‡ºCPUçš„æ‰§è¡Œæƒ
     }
 }
 
 function task2() {
     for ($i = 1; $i <= 5; ++$i) {
         echo "This is task 2 iteration $i.\n";
-        yield; // Ö÷¶¯ÈÃ³öCPUµÄÖ´ÐÐÈ¨
+        yield; // ä¸»åŠ¨è®©å‡ºCPUçš„æ‰§è¡Œæƒ
     }
 }
 
-$scheduler = new \Tool\Kernel\Coroutine\Scheduler(); // ÊµÀý»¯Ò»¸öµ÷¶ÈÆ÷
-$scheduler->addTask(task1()); // Ìí¼Ó²»Í¬µÄ±Õ°üº¯Êý×÷ÎªÈÎÎñ
+$scheduler = new \Tool\Kernel\Coroutine\Scheduler(); // å®žä¾‹åŒ–ä¸€ä¸ªè°ƒåº¦å™¨
+$scheduler->addTask(task1()); // æ·»åŠ ä¸åŒçš„é—­åŒ…å‡½æ•°ä½œä¸ºä»»åŠ¡
 $scheduler->addTask(task2());
 $scheduler->run();
