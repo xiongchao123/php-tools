@@ -1,5 +1,9 @@
 # php-tools
 
+## Installation
+
+`composer require xiongchao/php-tool`
+
 ## Docs
 
 - [Algorithm]
