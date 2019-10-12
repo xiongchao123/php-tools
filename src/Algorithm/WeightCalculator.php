@@ -5,7 +5,7 @@ namespace Tool\Algorithm;
 class WeightCalculator
 {
     /**
-     *  such as ['A'=>50,'B'=>25,'c'=>25]
+     * such as ['A'=>50,'B'=>25,'c'=>25]
      * @var array
      */
     protected $weightValues = array();
@@ -39,7 +39,6 @@ class WeightCalculator
 
     /**
      * @return int|string|null
-     * @throws \Exception
      */
     public function getRandomKey()
     {
