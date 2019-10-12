@@ -10,7 +10,7 @@
     "snowflake"
   ],
   "type": "library",
-  "license": "Apache",
+  "license": "MIT",
   "authors": [
     {
       "name": "xiongchao",
