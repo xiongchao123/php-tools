@@ -12,6 +12,8 @@
 - [Support]
   - [Str](./docs/support/str.md#description)  
     * [Angle Convert](./docs/support/str.md#angle-convert) 
-    * [Word Count](./docs/support/str.md#word-count)   
+    * [Word Count](./docs/support/str.md#word-count)  
+- [Crypt]
+  * [aes](./docs/crypt/aes.md#aes) 
 
 
