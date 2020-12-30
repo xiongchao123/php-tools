@@ -15,5 +15,7 @@
     * [Word Count](./docs/support/str.md#word-count)  
 - [Crypt]
   * [aes](./docs/crypt/aes.md#aes) 
+- [Lock]
+  * [distributed](./docs/lock/lock.md#distributed)
 
 

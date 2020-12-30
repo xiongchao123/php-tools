@@ -1,0 +1,7 @@
+## Lock description
+
+### distributed
+
+```php
+    
+```
